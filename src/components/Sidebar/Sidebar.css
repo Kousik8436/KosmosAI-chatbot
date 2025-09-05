@@ -6,6 +6,33 @@
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 25px 15px;
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        z-index: 1000;
+        width: 250px;
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 280px;
+        left: -280px;
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
 }
 .sidebar img{
     width: 20px;
@@ -100,6 +127,23 @@
 .sidebar.dark .bottom-item:hover{
     background: rgba(255,255,255,0.1);
     color: #ecf0f1;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar-overlay {
+        display: block;
+    }
 }
 .sidebar .bottom{
     display: flex;

@@ -5,12 +5,14 @@ import { Context } from '../../context/Context';
 
 const Sidebar = () => {
     const [extended, setExtended] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
     const { chatHistory, newChat, loadChat, darkMode } = useContext(Context);
 
     return (
-        <div className={`sidebar ${darkMode ? 'dark' : ''}`}>
+        <>
+        <div className={`sidebar ${darkMode ? 'dark' : ''} ${mobileOpen ? 'open' : ''}`}>
             <div className="top">
-                <img onClick={()=>setExtended(prev=>!prev)} className="menu" src={assets.menu_icon} alt='Toggle menu' />
+                <img onClick={()=>{setExtended(prev=>!prev); setMobileOpen(prev=>!prev);}} className="menu" src={assets.menu_icon} alt='Toggle menu' />
                 <div onClick={newChat} className="new-chat">
                     <img src={assets.plus_icon} alt='New chat' />
                     {extended ? <p>New Chat</p> : null}
@@ -42,6 +44,8 @@ const Sidebar = () => {
                 </div>
             </div>
         </div>
+        {mobileOpen && <div className="sidebar-overlay" onClick={() => setMobileOpen(false)}></div>}
+        </>
     );
 }
 export default Sidebar;
