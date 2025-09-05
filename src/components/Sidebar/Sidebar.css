@@ -1,0 +1,118 @@
+.sidebar{
+    min-height: 100vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 25px 15px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+.sidebar img{
+    width: 20px;
+}
+.sidebar .menu{
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.sidebar .new-chat{
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 25px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+}
+.sidebar .new-chat:hover{
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+.sidebar .recent{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar .recent-title{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 600;
+}
+.sidebar .recent-entry{
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: rgba(255,255,255,0.9);
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+.sidebar .recent-entry:hover{
+    background: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+.sidebar .recent-entry p{
+    font-size: 13px;
+    margin: 0;
+}
+.sidebar .recent{
+    max-height: 60vh;
+    overflow-y: auto;
+}
+.sidebar .recent::-webkit-scrollbar{
+    width: 4px;
+}
+.sidebar .recent::-webkit-scrollbar-thumb{
+    background-color: #ccc;
+    border-radius: 2px;
+}
+.sidebar.dark{
+    background: #202123;
+    border-right: 1px solid #565869;
+}
+.sidebar.dark .new-chat{
+    background: rgba(255,255,255,0.1);
+    color: #ecf0f1;
+}
+.sidebar.dark .new-chat:hover{
+    background: rgba(255,255,255,0.2);
+}
+.sidebar.dark .recent-title{
+    color: #ecf0f1;
+}
+.sidebar.dark .recent-entry{
+    color: #bdc3c7;
+}
+.sidebar.dark .recent-entry:hover{
+    background: rgba(255,255,255,0.1);
+}
+.sidebar.dark .bottom-item{
+    color: #bdc3c7;
+}
+.sidebar.dark .bottom-item:hover{
+    background: rgba(255,255,255,0.1);
+    color: #ecf0f1;
+}
+.sidebar .bottom{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar .bottom-item{
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: rgba(255,255,255,0.8);
+    transition: all 0.3s ease;
+}
+.sidebar .bottom-item:hover{
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
