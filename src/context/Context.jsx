@@ -71,17 +71,9 @@ const ContextProvider = (props) => {
                 if (uploadedFileContent && uploadedFileContent.trim()) {
                     fullPrompt = `Based on the uploaded file content: "${uploadedFileContent}", please answer: ${currentPrompt}`;
                 }
-                
-                if (prompt !== undefined) {
-                    response = await runChat(fullPrompt);
-                    setRecentPrompt(prompt);
-                } else {
-                    setPrevPrompts(prev => [...prev, input]);
-                    setRecentPrompt(input);
-                    response = await runChat(fullPrompt);
-                }
+                response = await runChat(fullPrompt);
             }
-            
+
             if (prompt !== undefined) {
                 setRecentPrompt(prompt);
             } else {
